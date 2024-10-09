@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de Arrendamiento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        .factura {
+            width: 100%;
+            max-width: 8.5in; /* Tamaño carta */
+            height: 11in;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #000;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .factura-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .factura-header h2 {
+            margin: 5px 0;
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+            margin: 0 auto 10px;
+        }
+        .divider {
+            border-top: 1px dashed #000;
+            margin: 10px 0;
+        }
+        .factura-body {
+            margin-bottom: 20px;
+        }
+        .details {
+            margin-bottom: 15px;
+        }
+        .details div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .details div span {
+            flex: 1;
+        }
+        .factura-items table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        .factura-items table, .factura-items th, .factura-items td {
+            border: 1px solid black;
+        }
+        .factura-items th {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: left;
+        }
+        .factura-items td {
+            padding: 8px;
+            text-align: right;
+        }
+        .factura-items td:first-child {
+            text-align: left;
+        }
+        .totals {
+            margin-top: 15px;
+        }
+        .totals div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .totals div span {
+            flex: 1;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+        .whatsapp-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .whatsapp-btn img {
+            width: 30px;
+        }
+    </style>
+    <!-- Librería para convertir HTML a imagen -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="factura" id="factura">
+        <!-- Icono de WhatsApp en la parte superior -->
+        <div class="whatsapp-btn" id="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" width="30">
+        </div>
+
+        <!-- Encabezado de la Factura -->
+        <div class="factura-header">
+            
+            <h2>COMPROBANTE DE PAGO</h2>
+            <p><strong>Número de Factura:</strong> 0012345</p> <!-- Número de Factura -->
+            <p><strong>Fecha de Pago:</strong> 2024-06-01</p> <!-- Fecha de Pago -->
+           
+
+        
+
+        <!-- Información del Arrendador y Arrendatario -->
+        <div class="factura-body">
+            <div class="details">
+                <div>
+                    <span><strong>Nombre Cliente:</strong></span>
+                    <span>Ever Armando Moncada</span>
+                </div>
+                <div>
+                    <span><strong>Telefono:</strong></span>
+                    <span>3145842929</span>
+                </div>
+                
+            </div>
+
+            
+
+            <!-- Detalles del Pago en Tabla -->
+            <div class="factura-items">
+                <h3>Detalles del Pago</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Mes</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PagoIntereses</td>
+                            <td>Junio</td>
+                            <td>$500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Abono</td>
+                            <td>Junio</td>
+                            <td>$50.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Período debajo de la tabla -->
+                <div>
+                    <strong>Período Desde</strong> 2024-06-01 
+                    <strong>Hasta</strong>  2024-06-30
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Totales -->
+            
+               
+                <div class="total">
+                    <span>Total a Pagar:</span>
+                    <span>$590.00</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <span><strong>Pago Efectivo:</strong></span>
+                <span>$600.00</span>
+            </div>
+            <div>
+                <span><strong>Cambio:</strong></span>
+                <span>$10.00</span>
+            </div>
+
+            <!-- Próximo pago resaltado en verde -->
+            <div class="divider"></div>
+            <div>
+                <span><strong class="highlight">Próximo Pago:</strong></span>
+                <span class="highlight">2024-07-01</span>
+            </div>
+        </div>
+
+        <h5 style="text-align: center;">Gracias por su pago.</h5>
+    </div>
+
+    <script>
+        document.getElementById('whatsapp-btn').addEventListener('click', function() {
+            const facturaElement = document.getElementById('factura');
+
+            html2canvas(facturaElement, {
+                scale: 3 // Ajusta el valor del escalado según tus necesidades
+            }).then(function(canvas) {
+                var imgData = canvas.toDataURL('image/png');
+
+                // Crear un enlace para enviar por WhatsApp
+                var whatsappMessage = encodeURIComponent("Aquí tienes tu factura de arrendamiento:");
+                var whatsappUrl = "https://api.whatsapp.com/send?text=" + whatsappMessage + "%0A%0A" + imgData;
+
+                // Redirigir a WhatsApp
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
+
