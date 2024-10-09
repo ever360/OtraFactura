@@ -122,14 +122,15 @@
             <div class="details">
                 <div>
                     <span><strong>Nombre Cliente:</strong></span>
-                    <span>Ever Moncada</span>
+                    <span class="NombreCliente" id="NombreCliente_id"></span>
                 </div>
+                 
                 <div>
                     <span><strong>Teléfono:</strong></span>
                     <span>3145842929</span>
                 </div>
             </div>
-
+       
             <!-- Detalles del Pago en Tabla -->
             <div class="factura-items">
                 <h3>Detalles del Pago</h3>
@@ -211,6 +212,13 @@
             });
         });
     </script>
+    <script>
+        // Obtener los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Obtener los valores de los parámetros
+        var NombreCliente = params.has('Cliente') ? params.get('Cliente') : "No encontrado"
+         </script>
 </body>
 </html>
 
