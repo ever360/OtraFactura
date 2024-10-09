@@ -112,29 +112,23 @@
 
         <!-- Encabezado de la Factura -->
         <div class="factura-header">
-            
             <h2>COMPROBANTE DE PAGO</h2>
-            <p><strong>Número de Factura:</strong> 0012345</p> <!-- Número de Factura -->
-            <p><strong>Fecha de Pago:</strong> 2024-06-01</p> <!-- Fecha de Pago -->
-           
-
-        
+            <p><strong>Número de Factura:</strong> 0012345</p>
+            <p><strong>Fecha de Pago:</strong> 2024-06-01</p>
+        </div>
 
         <!-- Información del Arrendador y Arrendatario -->
         <div class="factura-body">
             <div class="details">
                 <div>
                     <span><strong>Nombre Cliente:</strong></span>
-                    <span>Ever Armando Moncada Florez</span>
+                    <span>Ever Armando Moncada</span>
                 </div>
                 <div>
-                    <span><strong>Telefono:</strong></span>
+                    <span><strong>Teléfono:</strong></span>
                     <span>3145842929</span>
                 </div>
-                
             </div>
-
-            
 
             <!-- Detalles del Pago en Tabla -->
             <div class="factura-items">
@@ -149,7 +143,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>PagoIntereses</td>
+                            <td>Pago Intereses</td>
                             <td>Junio</td>
                             <td>$500.00</td>
                         </tr>
@@ -163,20 +157,17 @@
 
                 <!-- Período debajo de la tabla -->
                 <div>
-                    <strong>Período Desde</strong> 2024-06-01 
-                    <strong>Hasta</strong>  2024-06-30
+                    <strong>Período Desde:</strong> 2024-06-01 
+                    <strong>Hasta:</strong>  2024-06-30
                 </div>
             </div>
 
             <div class="divider"></div>
 
             <!-- Totales -->
-            
-               
-                <div class="total">
-                    <span>Total a Pagar:</span>
-                    <span>$590.00</span>
-                </div>
+            <div class="total">
+                <span>Total a Pagar:</span>
+                <span>$590.00</span>
             </div>
 
             <div class="divider"></div>
@@ -210,15 +201,17 @@
             }).then(function(canvas) {
                 var imgData = canvas.toDataURL('image/png');
 
-                // Crear un enlace para enviar por WhatsApp
-                var whatsappMessage = encodeURIComponent("Aquí tienes tu factura de arrendamiento:");
-                var whatsappUrl = "https://api.whatsapp.com/send?text=" + whatsappMessage + "%0A%0A" + imgData;
+                // Descargar la imagen en lugar de enviarla por WhatsApp
+                var link = document.createElement('a');
+                link.href = imgData;
+                link.download = 'factura.png';
+                link.click();
 
-                // Redirigir a WhatsApp
-                window.open(whatsappUrl, '_blank');
+                // Luego podrías sugerir al usuario subir la imagen manualmente a WhatsApp o a un servidor.
             });
         });
     </script>
 </body>
 </html>
+
 
