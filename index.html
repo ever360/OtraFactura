@@ -210,7 +210,7 @@
         <h5 style="text-align: center;">Gracias por su pago.</h5>
     </div>
 
-    <script>
+     <script>
         document.getElementById('whatsapp-btn').addEventListener('click', function() {
             const facturaElement = document.getElementById('factura');
 
@@ -219,13 +219,11 @@
             }).then(function(canvas) {
                 var imgData = canvas.toDataURL('image/png');
 
-                // Descargar la imagen en lugar de enviarla por WhatsApp
-                var link = document.createElement('a');
-                link.href = imgData;
-                link.download = 'factura.png';
-                link.click();
-
-                // Luego podrías sugerir al usuario subir la imagen manualmente a WhatsApp o a un servidor.
+                // Crear un enlace de WhatsApp
+                var whatsappUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Aquí tienes tu comprobante de pago.');
+                
+                // Abrir WhatsApp Web en una nueva ventana con el enlace para compartir la imagen
+                window.open(whatsappUrl, '_blank');
             });
         });
     </script>
