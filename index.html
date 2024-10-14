@@ -196,7 +196,7 @@
             </div>
             <div>
                 <span><strong>Saldo Pendiente:</strong></span>
-                <span>$550.000.00</span>
+                <span id="saldoPendiente"></span>
             </div>
 
             <!-- Próximo pago resaltado en verde -->
@@ -247,6 +247,7 @@
         var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
         var totalPagar = params.has('totalPagar') ? params.get('totalPagar') : "$ 0";
         var valorPrestamo = params.has('valorPrestamo') ? params.get('valorPrestamo') : "$ 0";
+        var saldoPendiente = params.has('saldoPendiente') ? params.get('saldoPendiente') : "$ 0";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -262,6 +263,7 @@
         document.getElementById("cancelar").textContent = cancelar;
         document.getElementById("totalPagar").textContent = totalPagar;
         document.getElementById("valorPrestamo").textContent = valorPrestamo;
+        document.getElementById("saldoPendiente").textContent = saldoPendiente;
     </script>
 </body>
 </html>
