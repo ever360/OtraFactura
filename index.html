@@ -135,7 +135,7 @@
                     <span  id="telefono"></span>
                 </div>
             </div>
-             <!-- Período debajo de la tabla -->
+             <!-- Período de pago -->
             <div>
                 <p></p><strong>Periodo depago </strong></p>
                <span><strong >DESDE:</strong>
@@ -174,21 +174,16 @@
                     </tbody>
                 </table>
 
-                <!-- Período debajo de la tabla -->
-                <div>
-                    <h3>Periodo de pago</h3>
-                    <strong>Período Desde:</strong> 12-10-2024
-                    <strong>Hasta:</strong>  12-11-2024
-                </div>
+                 <!-- Totales -->
+            <div class="total" style="text-align: left;">
+                <span>Total a Pagar:</span>
+                <span id="totalPagar"></span>
             </div>
+               
 
             <div class="divider"></div>
 
-            <!-- Totales -->
-            <div class="total">
-                <span>Total a Pagar:</span>
-                <span>$750.000.00</span>
-            </div>
+            
 
             <div class="divider"></div>
 
@@ -248,6 +243,7 @@
         var valor = params.has('valor') ? params.get('valor') : "$ 0";
         var abono = params.has('abono') ? params.get('abono') : "$ 0";
         var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
+        var totalPagar = params.has('totalPagar') ? params.get('totalPagar') : "$ 0";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -260,7 +256,8 @@
         document.getElementById("mes").textContent = mes;
         document.getElementById("valor").textContent = valor;
         document.getElementById("abono").textContent = abono;
-         document.getElementById("cancelar").textContent = cancelar;
+        document.getElementById("cancelar").textContent = cancelar;
+        document.getElementById("totalPagar").textContent = totalPagar;
     </script>
 </body>
 </html>
