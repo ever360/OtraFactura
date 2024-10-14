@@ -246,10 +246,10 @@
         var abono = params.has('abono') ? params.get('abono') : "$ 0";
         var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
         var totalPagar = params.has('totalPagar') ? params.get('totalPagar') : "$ 0";
-        var ValorPrestamo = params.has('ValorPrestamo') ? params.get('ValorPrestamo') : "$ 0";
+        var valorPrestamo = params.has('valorPrestamo') ? params.get('valorPrestamo') : "$ 0";
         var abonos = params.has('abonos') ? params.get('abonos') : "$ 0";
-        var SaldoPandiente = params.has('SaldoPandiente') ? params.get('SaldoPandiente') : "$ 0";
-        var  ProximoPago = params.has(' ProximoPago') ? params.get(' ProximoPago') : Fecha no especificado";
+        var saldoPandiente = params.has('saldoPandiente') ? params.get('saldoPandiente') : "$ 0";
+        var  proximoPago = params.has(' proximoPago') ? params.get(' proximoPago') : Fecha no especificado";
 
         
         // Asignar los valores a los elementos HTML
@@ -265,10 +265,10 @@
         document.getElementById("abono").textContent = abono;
         document.getElementById("cancelar").textContent = cancelar;
         document.getElementById("totalPagar").textContent = totalPagar;
-        document.getElementById("ValorPrestamo").textContent = ValorPrestamo;
+        document.getElementById("valorPrestamo").textContent = valorPrestamo;
         document.getElementById("abonos").textContent = abonos;
-        document.getElementById("SaldoPandiente").textContent = SaldoPandiente;
-        document.getElementById(" ProximoPago").textContent =  ProximoPago;
+        document.getElementById("saldoPandiente").textContent = saldoPandiente;
+        document.getElementById(" proximoPago").textContent =  proximoPago;
        
     </script>
 </body>
