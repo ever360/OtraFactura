@@ -185,9 +185,9 @@
 
              <div class="divider"></div>
 
-            <div  style="text-align: left;">
-                <span><strong>Valor Prestamo:</strong></span>
-                <span>$200.000.00</span>
+            <div>
+                <span><strong style="text-align: left;">Valor Prestamo:</strong></span>
+                <span id="valorPrestamo"></span>
             </div>
             
             <div>
@@ -246,6 +246,7 @@
         var abono = params.has('abono') ? params.get('abono') : "$ 0";
         var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
         var totalPagar = params.has('totalPagar') ? params.get('totalPagar') : "$ 0";
+        var valorPrestamo = params.has('valorPrestamo') ? params.get('valorPrestamo') : "$ 0";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -260,6 +261,7 @@
         document.getElementById("abono").textContent = abono;
         document.getElementById("cancelar").textContent = cancelar;
         document.getElementById("totalPagar").textContent = totalPagar;
+        document.getElementById("valorPrestamo").textContent = valorPrestamo;
     </script>
 </body>
 </html>
