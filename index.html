@@ -150,7 +150,7 @@
                     <tbody>
                         <tr>
                             <td>Pago Alquiler Ap.103</td>
-                            <td>Octubre</td>
+                            <td id="mes"></td>
                             <td>$550.000.00</td>
                         </tr>
                         <tr>
@@ -224,10 +224,10 @@
 
         // Obtener los valores de los parámetros
         var boleto = params.has('boleto') ? params.get('boleto') : "boleto no especificado";
-        var fechaPago = params.has('fechaPago') ? params.get('cliente') : "fechaPago no especificado";
+        var fechaPago = params.has('fechaPago') ? params.get('fechaPago') : "fechaPago no especificado";
         var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
-        var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "telefono no especificado";
+        var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "nit_cedula no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
 
         // Asignar los valores a los elementos HTML
