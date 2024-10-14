@@ -138,8 +138,8 @@
              <!-- Período debajo de la tabla -->
             <div>
                 <p></p><strong>Periodo depago </strong></p>
-               <span><strong class="highlight">DESDE:</strong></span>
-                <span class="highlight" id="desde">12-11-2024</span>
+               <span><strong class="highlight">DESDE:</strong><strong class="highlight">HASTA:</strong></span>
+                <span class="highlight" id="desde"></span><span class="highlight" id="hasta"></span>
             </div>
             <!-- Detalles del Pago en Tabla -->
             <div class="factura-items">
@@ -239,7 +239,8 @@
         var fechaPago = params.has('fechaPago') ? params.get('fechaPago') : "fechaPago no especificado";
         var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
-         var desde = params.has('desde') ? params.get('desde') : "Fecha no especificado";
+        var desde = params.has('desde') ? params.get('desde') : "Fecha no especificado";
+         var hasta = params.has('hasta') ? params.get('hasta') : "Fecha no especificado";
         var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "nit_cedula no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
         var valor = params.has('valor') ? params.get('valor') : "$ 0";
@@ -252,6 +253,7 @@
         document.getElementById("cliente").textContent = cliente;
         document.getElementById("telefono").textContent = telefono;
         document.getElementById("desde").textContent = desde;
+        document.getElementById("hasta").textContent = hasta;
         document.getElementById("nit_cedula").textContent = nit_cedula;
         document.getElementById("mes").textContent = mes;
         document.getElementById("valor").textContent = valor;
