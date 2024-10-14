@@ -132,7 +132,7 @@
                 </div>
                 <div>
                     <span><strong>Teléfono:</strong></span>
-                    <span>0000000000</span>
+                    <span  id="telefono"></span>
                 </div>
             </div>
        
@@ -224,10 +224,12 @@
 
         // Obtener los valores de los parámetros
         var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
+        var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("cliente").textContent = cliente;
+        document.getElementById("telefono").textContent = telefono;
         document.getElementById("mes").textContent = mes;
     </script>
 </body>
