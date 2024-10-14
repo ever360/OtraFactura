@@ -263,7 +263,7 @@
                 var mensaje = "Aquí está tu comprobante de pago:";
 
                 // Crear enlace de WhatsApp con número dinámico y mensaje
-                var enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefonoCliente}&text=${encodeURIComponent(mensaje)}`;
+                var enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono }&text=${encodeURIComponent(mensaje)}`;
 
                 // Redirigir a WhatsApp con el enlace generado
                 window.open(enlaceWhatsApp, '_blank');
