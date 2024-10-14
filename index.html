@@ -114,8 +114,8 @@
         <div class="factura-header">
             <h2>COMPROBANTE DE PAGO</h2>
             <p><strong>Número de Factura:</strong></p>
-            <p id=boleta></p>
-            <p><strong>Fecha de Pago:</strong> 12-10-2024</p>
+            <p id="factura"></p>
+            <p><strong>Fecha de Pago:</strong ><strong id="fechaPago"></strong> </p>
         </div>
 
         <!-- Información del Arrendador y Arrendatario -->
@@ -128,7 +128,7 @@
                 </div>
                   <div>
                     <span><strong>Nit-Cedula:</strong></span>
-                    <span id="cliente" >1.143.862.937</span>
+                    <span id="nit_cedula" ></span>
                 </div>
                 <div>
                     <span><strong>Teléfono:</strong></span>
@@ -223,13 +223,19 @@
         const params = new URLSearchParams(window.location.search);
 
         // Obtener los valores de los parámetros
+        var factura = params.has('factura') ? params.get('factura') : "factura no especificado";
+        var fechaPago = params.has('fechaPago') ? params.get('cliente') : "fechaPago no especificado";
         var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
+        var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "telefono no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
 
         // Asignar los valores a los elementos HTML
+        document.getElementById("factura").textContent = factura;
+        document.getElementById("fechaPago").textContent = fechaPago;
         document.getElementById("cliente").textContent = cliente;
         document.getElementById("telefono").textContent = telefono;
+        document.getElementById("nit_cedula").textContent = nit_cedula;
         document.getElementById("mes").textContent = mes;
     </script>
 </body>
