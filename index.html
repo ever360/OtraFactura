@@ -149,14 +149,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Pago Alquiler Ap.103</td>
+                            <td>Pago Intereses</td>
                             <td id="mes"></td>
-                            <td>$550.000.00</td>
+                            <td id="valor"></td>
                         </tr>
                         <tr>
-                            <td>Deposito</td>
-                            <td>--</td>
-                            <td>$200.000.00</td>
+                            <td>Abono</td>
+                            <td></td>
+                            <td id="abono"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -229,6 +229,8 @@
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
         var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "nit_cedula no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
+        var mes = params.has('valor') ? params.get('valor') : "$ 0";
+        var mes = params.has('abono') ? params.get('abono') : "";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -237,6 +239,8 @@
         document.getElementById("telefono").textContent = telefono;
         document.getElementById("nit_cedula").textContent = nit_cedula;
         document.getElementById("mes").textContent = mes;
+        document.getElementById("valor").textContent = valor;
+        document.getElementById("abono").textContent = abono;
     </script>
 </body>
 </html>
