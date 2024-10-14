@@ -187,7 +187,7 @@
 
             <div style="text-align: left;">
                 <span style="text-align: left;"><strong>Valor Prestamo:</strong></span>
-                <span style="text-align: left;" id="ValorPrestamo"></span>
+                <span style="text-align: left;" id="ValorPrestamo"></span
             </div>
             
             <div>
@@ -250,6 +250,8 @@
         var abonos = params.has('abonos') ? params.get('abonos') : "$ 0";
         var SaldoPandiente = params.has('SaldoPandiente') ? params.get('SaldoPandiente') : "$ 0";
         var  ProximoPago = params.has(' ProximoPago') ? params.get(' ProximoPago') : Fecha no especificado";
+
+        
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
         document.getElementById("fechaPago").textContent = fechaPago;
