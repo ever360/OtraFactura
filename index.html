@@ -233,10 +233,7 @@
         var abono = params.has('abono') ? params.get('abono') : "$ 0";
         var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
         var totalPagar = params.has('totalPagar') ? params.get('totalPagar') : "$ 0";
-        var valorPrestamo = params.has('valorPrestamo') ? params.get('valorPrestamo') : "$ 0";
-        var vaorAbonado = params.has('vaorAbonado') ? params.get('vaorAbonado') : "$ 0";
-        var saldoPandiente = params.has('saldoPandiente') ? params.get('saldoPandiente') : "$ 0";
-        var  proximoPago = params.has(' proximoPago') ? params.get(' proximoPago') : Fecha no especificada";
+        
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -251,10 +248,6 @@
         document.getElementById("abono").textContent = abono;
         document.getElementById("cancelar").textContent = cancelar;
         document.getElementById("totalPagar").textContent = totalPagar;
-        document.getElementById("valorPrestamo").textContent = valorPrestamo;
-        document.getElementById("vaorAbonado").textContent = vaorAbonado;
-        document.getElementById("saldoPandiente").textContent = saldoPandiente;
-        document.getElementById(" proximoPago").textContent =  proximoPago;
-    </script>
+        
 </body>
 </html>
