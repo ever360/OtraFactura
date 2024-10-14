@@ -113,7 +113,7 @@
         <!-- Encabezado de la Factura -->
         <div class="factura-header">
             <h2>COMPROBANTE DE PAGO</h2>
-            <p><strong>Número de Factura:</strong></p>
+            <p><strong>Número de Factura:</strong><strong id="boleto"></strong></p>
             
             <p><strong>Fecha de Pago:</strong ><strong id="fechaPago"></strong> </p>
         </div>
@@ -223,7 +223,7 @@
         const params = new URLSearchParams(window.location.search);
 
         // Obtener los valores de los parámetros
-        var factura = params.has('factura') ? params.get('factura') : "factura no especificado";
+        var boleto = params.has('boleto') ? params.get('boleto') : "boleto no especificado";
         var fechaPago = params.has('fechaPago') ? params.get('cliente') : "fechaPago no especificado";
         var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
