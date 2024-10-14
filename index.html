@@ -248,6 +248,28 @@
             });
         });
     </script>
+        <script>
+        document.getElementById('whatsapp-btn').addEventListener('click', function() {
+            // Captura de pantalla
+            const facturaElement = document.getElementById('factura');
+            html2canvas(facturaElement, {
+                scale: 3 // Ajusta el valor del escalado según tus necesidades
+            }).then(function(canvas) {
+                // Convertir la imagen en base64
+                var imgData = canvas.toDataURL('image/png');
+                
+                // Número de teléfono dinámico del cliente
+                var telefono = "telefono"; // Puedes cambiarlo dinámicamente en tu script
+                var mensaje = "Aquí está tu comprobante de pago:";
+
+                // Crear enlace de WhatsApp con número dinámico y mensaje
+                var enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefonoCliente}&text=${encodeURIComponent(mensaje)}`;
+
+                // Redirigir a WhatsApp con el enlace generado
+                window.open(enlaceWhatsApp, '_blank');
+            });
+        });
+    </script>
     <script>
         // Obtener los parámetros de la URL
         const params = new URLSearchParams(window.location.search);
