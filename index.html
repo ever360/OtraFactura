@@ -229,8 +229,8 @@
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
         var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "nit_cedula no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
-        var mes = params.has('valor') ? params.get('valor') : "$ 0";
-        var mes = params.has('abono') ? params.get('abono') : "";
+        var valor = params.has('valor') ? params.get('valor') : "$ 0";
+        var abono = params.has('abono') ? params.get('abono') : "";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
