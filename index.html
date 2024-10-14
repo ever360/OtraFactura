@@ -80,9 +80,7 @@
         .totals div span {
             flex: 1;
             
-     .totals1 {
-            text-align: left;
-        }
+     
         .total {
             font-weight: bold;
             font-size: 16px;
@@ -179,9 +177,14 @@
                 </table>
 
                  <!-- Totales -->
-            <div class="totals1" style="text-align: left;">
-                <span>Total a Pagar:</span>
-                <span id="totalPagar"></span>
+           <!-- Totales en tabla a la izquierda -->
+            <div class="totals" style="text-align: left;">
+                <table>
+                    <tr>
+                        <td><strong>Total a Pagar:</strong></td>
+                        <td><span id="totalPagar"></span></td>
+                    </tr>
+                </table>
             </div>
                
 
