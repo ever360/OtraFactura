@@ -72,18 +72,19 @@
         }
         .totals {
             margin-top: 15px;
-            text-align: left; /* Alinear texto a la izquierda */
         }
-        .totals table {
-            width: auto; /* Ancho automático para ajustar al contenido */
-            border-collapse: collapse; /* Colapsar bordes de la tabla */
+        .totals div {
+            display: flex;
+            justify-content: space-between;
         }
-        .totals td {
-            padding: 5px 10px; /* Espaciado dentro de las celdas */
-        }
+        .totals div span {
+            flex: 1;
+            
+     
         .total {
             font-weight: bold;
             font-size: 16px;
+            
         }
         .highlight {
             color: green;
@@ -115,32 +116,34 @@
         <div class="factura-header">
             <h2>COMPROBANTE DE PAGO</h2>
             <p><strong>Número de Factura:</strong><strong id="boleto"></strong></p>
+            
             <p><strong>Fecha de Pago:</strong ><strong id="fechaPago"></strong> </p>
         </div>
 
-        <!-- Información del Arrendador y Arrendatario -->
+        <!-- Información del Cliente -->
         <div class="factura-body">
             <div class="details">
                 <div>
                     <span><strong>Nombre Cliente:</strong></span>
                     <span id="cliente"></span>
+                   
                 </div>
-                <div>
+                  <div>
                     <span><strong>Nit-Cedula:</strong></span>
                     <span id="nit_cedula" ></span>
                 </div>
                 <div>
                     <span><strong>Teléfono:</strong></span>
-                    <span id="telefono"></span>
+                    <span  id="telefono"></span>
                 </div>
             </div>
-            <!-- Período de pago -->
+             <!-- Período de pago -->
             <div>
-                <strong>Periodo de pago:</strong>
-                <span><strong>DESDE:</strong>
+                <p></p><strong>Periodo depago </strong></p>
+               <span><strong >DESDE:</strong>
                 <span class="highlight" id="desde"></span>
-                <strong> HASTA:</strong></span>
-                <span class="highlight" id="hasta"></span>
+                <strong style="text-align: left;">HASTA:</strong></span>
+                <span class="highlight" style="text-align: left;" id="hasta"></span>
             </div>
             <!-- Detalles del Pago en Tabla -->
             <div class="factura-items">
@@ -164,26 +167,23 @@
                             <td></td>
                             <td id="abono"></td>
                         </tr>
+
                         <tr>
-                            <td>Cancelar Saldo</td>
+                            <td>Cancelar Saldo </td>
                             <td></td>
                             <td id="cancelar"></td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
 
-            <!-- Totales en tabla a la izquierda -->
-            <div class="totals">
-                <table>
-                    <tr>
-                        <td><strong>Total a Pagar:</strong></td>
-                        <td><span id="totalPagar"></span></td>
-                    </tr>
-                </table>
+                 <!-- Totales -->
+            <div class="totals1" style="text-align: left;">
+                <span>Total a Pagar:</span>
+                <span id="totalPagar"></span>
             </div>
+               
 
-            <div class="divider"></div>
+             <div class="divider"></div>
 
             <div>
                 <span><strong>Pago Efectivo:</strong></span>
@@ -191,7 +191,7 @@
             </div>
             
             <div>
-                <span><strong>Pago Transferencia:</strong></span>
+                <span><strong>Pago Trasferencia:</strong></span>
                 <span>$550.000.00</span>
             </div>
 
@@ -220,6 +220,8 @@
                 link.href = imgData;
                 link.download = 'factura.png';
                 link.click();
+
+                // Luego podrías sugerir al usuario subir la imagen manualmente a WhatsApp o a un servidor.
             });
         });
     </script>
@@ -233,7 +235,7 @@
         var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
         var telefono = params.has('telefono') ? params.get('telefono') : "telefono no especificado";
         var desde = params.has('desde') ? params.get('desde') : "Fecha no especificado";
-        var hasta = params.has('hasta') ? params.get('hasta') : "Fecha no especificado";
+         var hasta = params.has('hasta') ? params.get('hasta') : "Fecha no especificado";
         var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "nit_cedula no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
         var valor = params.has('valor') ? params.get('valor') : "$ 0";
