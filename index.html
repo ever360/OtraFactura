@@ -80,7 +80,7 @@
         .totals div span {
             flex: 1;
             
-     
+       }
         .total {
             font-weight: bold;
             font-size: 16px;
@@ -186,13 +186,17 @@
              <div class="divider"></div>
 
             <div>
-                <span><strong>Pago Efectivo:</strong></span>
-                <span>$200.000.00</span>
+                <span><strong>Valor Prestamo:</strong></span>
+                <span id="ValorPrestamo"></span>
             </div>
             
             <div>
-                <span><strong>Pago Trasferencia:</strong></span>
-                <span>$550.000.00</span>
+                <span><strong>Abonos:</strong></span>
+                <span id="abonos"></span>
+            </div>
+                <div>
+                <span><strong>Saldo Perndiente:</strong></span>
+                <span id="SaldoPandiente"></span>
             </div>
 
             <!-- Próximo pago resaltado en verde -->
@@ -242,6 +246,9 @@
         var abono = params.has('abono') ? params.get('abono') : "$ 0";
         var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
         var totalPagar = params.has('totalPagar') ? params.get('totalPagar') : "$ 0";
+        var ValorPrestamo = params.has('ValorPrestamo') ? params.get('ValorPrestamo') : "$ 0";
+        var abonos = params.has('abonos') ? params.get('abonos') : "$ 0";
+        var SaldoPandiente = params.has('SaldoPandiente') ? params.get('SaldoPandiente') : "$ 0";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -256,6 +263,9 @@
         document.getElementById("abono").textContent = abono;
         document.getElementById("cancelar").textContent = cancelar;
         document.getElementById("totalPagar").textContent = totalPagar;
+        document.getElementById("ValorPrestamo").textContent = ValorPrestamo;
+        document.getElementById("abonos").textContent = abonos;
+        document.getElementById("SaldoPandiente").textContent = SaldoPandiente;
     </script>
 </body>
 </html>
