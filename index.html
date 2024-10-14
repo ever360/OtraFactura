@@ -185,20 +185,6 @@
 
              <div class="divider"></div>
 
-            <div>
-                <span><strong>Valor Prestado:</strong></span>
-                <span id="valorPrestamo"></span>
-            </div>
-            
-            <div>
-                <span><strong>Valor Abonado:</strong></span>
-                <span id="vaorAbonado"></span>
-            </div>
-
-             <div>
-                <span><strong>Saldo Pendiente:</strong></span>
-                <span id="saldoPandiente"></span>
-            </div>
 
             <!-- Próximo pago resaltado en verde -->
             <div class="divider"></div>
@@ -250,7 +236,7 @@
         var valorPrestamo = params.has('valorPrestamo') ? params.get('valorPrestamo') : "$ 0";
         var vaorAbonado = params.has('vaorAbonado') ? params.get('vaorAbonado') : "$ 0";
         var saldoPandiente = params.has('saldoPandiente') ? params.get('saldoPandiente') : "$ 0";
-        var  proximoPago = params.has(' proximoPago') ? params.get(' proximoPago') : Fecha no especificado";
+        var  proximoPago = params.has(' proximoPago') ? params.get(' proximoPago') : Fecha no especificada";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
