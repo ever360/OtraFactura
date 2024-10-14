@@ -100,6 +100,17 @@
         .whatsapp-btn img {
             width: 30px;
         }
+        .btn-compartir {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-compartir img {
+            width: 50px;
+            height: auto;
+        }
     </style>
     <!-- Librería para convertir HTML a imagen -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -209,10 +220,12 @@
 
         <h5 style="text-align: center;">Gracias por su pago.</h5>
     </div>
-
+   <div class="btn-compartir" id="btnCompartir">
+        <img src="https://raw.githubusercontent.com/ever360/OtraFactura/main/share-button-.png" alt="Botón Compartir">
+    </div>
      <button class="btn-compartir" id="btnCompartir">Compartir</button>
 
-    <script>
+     <script>
         document.getElementById('btnCompartir').addEventListener('click', function() {
             const facturaElement = document.getElementById('factura');
 
