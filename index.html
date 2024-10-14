@@ -123,10 +123,8 @@
             <div class="details">
                 <div>
                     <span><strong>Nombre Cliente:</strong></span>
-                    <span id="cliente" >Daniel Felipe Rngel Hurtado</span>
-                    <b>CLIENTE 1:</b>
-            <h1 class="nombre-cliente" id="mesa">
-            </h1>
+                   <p><b>Cliente:</b> <span id="cliente"></span></p>
+                   
                 </div>
                   <div>
                     <span><strong>Nit-Cedula:</strong></span>
@@ -220,55 +218,17 @@
             });
         });
     </script>
-     <script>
+    <script>
         // Obtener los parámetros de la URL
         const params = new URLSearchParams(window.location.search);
 
         // Obtener los valores de los parámetros
-        var nro_boleta = params.has('boleta') ? params.get('boleta') : "---";
-        var nombre_cliente = params.has('cliente') ? params.get('cliente') : "==ever==";
-        var telefono = params.has('telefono') ? params.get('telefono') : "==3145842929==";
-        var codigo_pais = params.has('codigo_pais') ? params.get('codigo_pais') : "==+57==";
-        var fecha = params.has('fecha') ? params.get('fecha') : "dd/mm/aaaa hh:mm:ss";
-        var fecha_entrega = params.has('fecha_entrega') ? params.get('fecha_entrega') : "hh:mm:ss";
-        var total = params.has('total') ? params.get('total') : "";
-        var subtotal_desc = params.has('subtotal_desc') ? params.get('subtotal_desc') : " ";
-        var total_a_pagar = params.has('total_a_pagar') ? params.get('total_a_pagar') : " ";
-        var descuento = params.has('descuento') ? params.get('descuento') : " ";
-        var a_cuenta = params.has('a_cuenta') ? params.get('a_cuenta') : " ";
-        var estado = params.has('estado') ? params.get('estado') : "--";
+        var cliente = params.has('cliente') ? params.get('cliente') : "Cliente no especificado";
+        var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
 
-        //Recibe los datos de los servicios (separados por comas)
-        var cantidades = params.has('cantidades') ? params.get('cantidades') : "";
-        var descripciones = params.has('servicios') ? params.get('servicios') : "";
-        var detalle = params.has('detalles') ? params.get('detalles') : "";
-        var p_units = params.has('p_unit') ? params.get('p_unit') : "";
-        var subtotal = params.has('subtotal') ? params.get('subtotal') : "";
-        
-        //Formato de 2 decimales
-        //total = parseFloat(total).toLocaleString('es-ES', { minimumFractionDigits: 2 });
-        //descuento = parseFloat(descuento).toLocaleString('es-ES', { minimumFractionDigits: 2 });
-        //subtotal_desc = parseFloat(subtotal_desc).toLocaleString('es-ES', { minimumFractionDigits: 2 });
-        
-        //crea una lista de cada columna a partir de las comas.
-        cantidades = cantidades.split(",");
-        descripciones = descripciones.split(",");
-        detalle = detalle.split(",");
-        p_units = p_units.split(",");
-
-        //Crea una lista para mostrar en cada fila de la tabla
-        var result = [];
-        
-        cantidades.forEach(function(value, id) {
-            result[id] = {
-                cantidad: cantidades[id],
-                descripcion: descripciones[id], // + " " + detalles[id], // Descomenta si deseas concatenar la descripción con el detalle
-                detalle: detalle[id],
-                subtotal: subtotal[id],
-                precio_unit: parseFloat(p_units[id]).toFixed(2),
-              
-            };
-        });
+        // Asignar los valores a los elementos HTML
+        document.getElementById("cliente").textContent = cliente;
+        document.getElementById("mes").textContent = mes;
     </script>
 </body>
 </html>
