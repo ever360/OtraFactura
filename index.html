@@ -203,7 +203,7 @@
             <div class="divider"></div>
             <div>
                 <span><strong class="highlight">Próximo Pago:</strong></span>
-                <span class="highlight">12-11-2024</span>
+                <span class="highlight" id="ProximoPago"></span>
             </div>
         </div>
 
@@ -249,7 +249,7 @@
         var ValorPrestamo = params.has('ValorPrestamo') ? params.get('ValorPrestamo') : "$ 0";
         var abonos = params.has('abonos') ? params.get('abonos') : "$ 0";
         var SaldoPandiente = params.has('SaldoPandiente') ? params.get('SaldoPandiente') : "$ 0";
-
+        var  ProximoPago = params.has(' ProximoPago') ? params.get(' ProximoPago') : Fecha no especificado";
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
         document.getElementById("fechaPago").textContent = fechaPago;
@@ -266,6 +266,8 @@
         document.getElementById("ValorPrestamo").textContent = ValorPrestamo;
         document.getElementById("abonos").textContent = abonos;
         document.getElementById("SaldoPandiente").textContent = SaldoPandiente;
+        document.getElementById(" ProximoPago").textContent =  ProximoPago;
+       
     </script>
 </body>
 </html>
