@@ -158,6 +158,12 @@
                             <td></td>
                             <td id="abono"></td>
                         </tr>
+
+                        <tr>
+                            <td>Cancelar Saldo </td>
+                            <td></td>
+                            <td id="cancelar"></td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -230,7 +236,8 @@
         var nit_cedula = params.has('nit_cedula') ? params.get('nit_cedula') : "nit_cedula no especificado";
         var mes = params.has('mes') ? params.get('mes') : "Mes no especificado";
         var valor = params.has('valor') ? params.get('valor') : "$ 0";
-        var abono = params.has('abono') ? params.get('abono') : "";
+        var abono = params.has('abono') ? params.get('abono') : "$ 0";
+        var cancelar = params.has('cancelar') ? params.get('cancelar') : "$ 0";
 
         // Asignar los valores a los elementos HTML
         document.getElementById("boleto").textContent = boleto;
@@ -241,6 +248,7 @@
         document.getElementById("mes").textContent = mes;
         document.getElementById("valor").textContent = valor;
         document.getElementById("abono").textContent = abono;
+         document.getElementById("cancelar").textContent = cancelar;
     </script>
 </body>
 </html>
